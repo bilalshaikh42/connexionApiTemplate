@@ -1,0 +1,38 @@
+openapi: 3.0.0
+info:
+  title: "API"
+  version: "1.0.0"
+  contact:
+    name: Contact Name
+    email: contact@example.com
+    url: https://example.com/
+tags:
+  - name: Metadata
+    description: Metadata related requests
+paths:
+  /:
+    get:
+      summary: Get metadata from the root of the API
+      tags: ["Metadata"]
+      responses:
+        "200":
+          description: OK
+  /vis:
+    get:
+      summary: Get a list of sample visulizations
+      responses:
+        "200":
+          description: OK
+  /vis/{id}:
+    parameters:
+      - in: path
+        name: id
+        description: Id of sim
+        required: true
+        schema:
+          type: integer
+    get:
+      summary: Get a list of visualizations for specific simulation
+      responses:
+        "200":
+          description: OK
